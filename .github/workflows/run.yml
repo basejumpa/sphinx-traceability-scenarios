@@ -45,7 +45,8 @@ jobs:
         run: pipenv run sphinx-build docs build/html
 
       - name: Build scenarios
-        run:  for d in $(ls -d scenarios/*); do pipenv run sphinx-build $d build/html/$d; done
+        run:  |
+          shopt -s dotglob; for d in $(ls -d scenarios/*); do (cd $d; pipenv run ./build.sh); td=build/html/$d; mkdir -p $td; mv $d/build/* $td; done
 
       - name: Upload website to artifacts
         uses: actions/upload-pages-artifact@v1

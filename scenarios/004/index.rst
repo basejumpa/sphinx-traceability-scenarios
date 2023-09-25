@@ -24,24 +24,27 @@ Design Specification
 
     Content of DESIGN_0001
 
-Some text before the item.
+.. ifconfig:: True
 
-.. item:: DESIGN_0002
-    :fulfills: REQ_0002
+    Some text before the item.
 
-    Content of DESIGN_0002
+    .. item:: DESIGN_0002
+        :fulfills: REQ_0002
 
-Some text after the item.
+        Content of DESIGN_0002
 
+    Some text after the item.
 
-Some text before the item.
+.. ifconfig:: False
 
-.. item:: DESIGN_0003
-    :fulfills: REQ_0003
+    Some text before the item.
 
-    Content of DESIGN_0003
+    .. item:: DESIGN_0003
+        :fulfills: REQ_0003
 
-Some text after the item.
+        Content of DESIGN_0003
+
+    Some text after the item.
 
 Traceability
 ************
