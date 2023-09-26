@@ -1,19 +1,17 @@
 extensions = [
-    'sphinx_selective_exclude.eager_only',
-    'mlx.traceability'
+    'sphinx.ext.ifconfig',
 ]
 
 def setup(app):
-    app.add_config_value('tags_file', '', 'env')
+    app.add_config_value('config_file', '', 'env')
+    app.add_config_value('config', {}, 'env')
     app.connect("config-inited", config_inited)
 
-def config_inited(app, config):
-    import os
-    import sys
+# print(f"config_file={config_file}")
 
-    if config.tags_file:
-        with open(config.tags_file) as f:
-            for line in f.readlines():
-                line = line.strip()
-                if line != "":
-                    app.tags.add(line)
+def config_inited(app, config):
+    
+    if config.config_file:
+        with open(config.config_file) as f:
+            from json import load as json_load
+            app.config.__dict__["config"] = json_load(f)

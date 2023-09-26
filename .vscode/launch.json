@@ -10,8 +10,8 @@
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/.venv/Scripts/sphinx-build.exe",
-            "cwd": "${workspaceFolder}/scenarios/003",
-            "args": [".", "build/b", "-b", "text", "-D", "'feature_a=0'", "-a"],
+            "cwd": "${workspaceFolder}/scenarios/004",
+            "args": [".", "build/b", "-b", "text", "-D", "config_file=config_b.json", "-a"],
             "console": "integratedTerminal",
             "justMyCode": false
         }

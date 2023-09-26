@@ -43,7 +43,7 @@ jobs:
 
       - name: Build scenarios
         run:  |
-          shopt -s dotglob; for d in $(ls -d scenarios/*); do (cd $d; pipenv run ./build.sh); td=build/html/$d; mkdir -p $td; mv $d/build/* $td; done
+          shopt -s dotglob; for d in $(ls -d scenarios/*); do echo "*** $d ***" ; (cd $d; pipenv run ./build.sh); td=build/html/$d; mkdir -p $td; mv $d/build/* $td; done
 
       - name: Build main website
         run: pipenv run sphinx-build docs build/html
