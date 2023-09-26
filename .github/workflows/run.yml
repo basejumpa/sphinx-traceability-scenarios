@@ -41,12 +41,12 @@ jobs:
           python -m pip install --upgrade pipenv wheel
           pipenv install -r requirements.txt
 
-      - name: Build main website
-        run: pipenv run sphinx-build docs build/html
-
       - name: Build scenarios
         run:  |
           shopt -s dotglob; for d in $(ls -d scenarios/*); do (cd $d; pipenv run ./build.sh); td=build/html/$d; mkdir -p $td; mv $d/build/* $td; done
+
+      - name: Build main website
+        run: pipenv run sphinx-build docs build/html
 
       - name: Upload website to artifacts
         uses: actions/upload-pages-artifact@v1

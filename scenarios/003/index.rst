@@ -1,5 +1,5 @@
-Scenario 1
-##########
+Specifications
+##############
 
 Requirement Specification
 *************************
@@ -12,39 +12,23 @@ Requirement Specification
 
     Content of REQ_0002
 
-.. item:: REQ_0003
-
-    Content of REQ_0003
-
 Design Specification
 ********************
 
 .. item:: DESIGN_0001
-    :fulfills: REQ_0001 REQ_0002
+    :fulfills: REQ_0001
 
     Content of DESIGN_0001
 
-.. only:: tag1
-
-    Some text before the item.
+.. ifconfig:: feature_a
 
     .. item:: DESIGN_0002
         :fulfills: REQ_0002
 
         Content of DESIGN_0002
 
-    Some text after the item.
-
-.. only:: tag2
-
-    Some text before the item.
-
-    .. item:: DESIGN_0003
-        :fulfills: REQ_0003
-
-        Content of DESIGN_0003
-
-    Some text after the item.
+        .. note::
+            This is a note inside DESIGN_0002
 
 Traceability
 ************

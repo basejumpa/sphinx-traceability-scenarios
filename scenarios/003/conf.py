@@ -1,7 +1,7 @@
 extensions = [
-    'sphinx_selective_exclude.eager_only',
+    'sphinx.ext.ifconfig',
     'mlx.traceability'
 ]
 
-tags = ['tag1', 'tag2', 'tag3']
-
+def setup(app):
+    app.add_config_value('feature_a', 0, 'env')
